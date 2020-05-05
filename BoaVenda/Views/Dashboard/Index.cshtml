@@ -1,0 +1,228 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="header-dash mb-5 pb-5">
+    <h1 style="font-size: 50px; font-family: 'Lucida Handwriting'" class="text-danger">&#128521; Bem-vind@@ &#128512;</h1>
+    <p style="background: #80808035; font-size: 20px; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif" class="mb-3 text-danger">Acompanhe informações sobre seus produtos e veja gráficos relevantes para seu negócio.</p>
+    <br>
+</div>
+
+<div class="container-fluid mb-5 pb-5 mt-5 pt-5">
+    <div class="row">
+        <div class="col-2">
+            <div class="list-group" id="list-tab" role="tablist">
+                <a class="list-group-item list-group-item-action active" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="produtos">Produtos</a>
+                <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="graficos">Gráficos</a>
+            </div>
+        </div>
+        <div class="col-10">
+            <div class="tab-content p-3" id="nav-tabContent">
+
+                <div class="tab-pane fade show active" id="list-home" role="tabpanel" aria-labelledby="list-produtos-list">
+                    <h3 class="w-100 display-4 text-center m-3">--- Produtos ---</h3>
+
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-danger m-2 mt-4" data-toggle="modal" data-target="#produtoModal">
+                        Adicionar Produto
+                    </button>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="produtoModal" tabindex="-1" role="dialog" aria-labelledby="produtoModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Adicionar Produto</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+
+                                <div class="modal-body p-3">
+                                    <div class="form-group">
+
+                                        <label for="linkProduto">Link Do Produto (Cole o link no campo abaixo)</label>
+                                        <input id="linkProduto" class="form-control w-100 text-dark" type="text" />
+
+                                        <label class="m-2">Plataformas à Monitorar</label>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="Google" id="monitoramentoGoogle">
+                                            <label class="form-check-label" for="monitoramentoGoogle">
+                                                Google
+                                            </label>
+                                            <br>
+                                            <input class="form-check-input" type="checkbox" value="Mercado Livre" id="monitoramentoMercadoLivre">
+                                            <label class="form-check-label" for="monitoramentoMercadoLivre">
+                                                Mercado Livre
+                                            </label>
+                                        </div>
+
+                                        <label class="mt-3" for="linkProduto">Buscas a serem monitoradas:</label>
+                                        <div class="w-100">
+                                            <input id="buscaProduto" class="form-control w-75 float-right" type="text" />
+                                            <button class="btn btn-danger mb-2 w-25 float-right" onclick="AdicionaBusca()">Adicionar</button>
+                                        </div>
+
+                                        @*TABLE DE BUSCAS A SEREM MONITORADAS*@
+                                        <table class="table table-hover mb-3">
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col">Busca</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="tbodyBusca">
+    
+                                                @* inner html aqui <tr>
+                                                    <th scope="row">1</th>
+                                                    <td></td>
+                                                </tr>*@
+                                            </tbody>
+                                        </table>
+
+
+                                    </div>
+                                </div>
+
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                                    <button id="cadProduto" type="button" class="btn btn-danger">Cadastrar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <table class="table table-hover">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th class="text-center" scope="col">Imagem</th>
+                                <th class="text-center" scope="col">Descrição</th>
+                                <th class="text-center" scope="col">Preço</th>
+                                <th class="text-center" scope="col">Posição Google</th>
+                                <th class="text-center" scope="col">Posição Mercado Livre</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <img src="https://http2.mlstatic.com/notebook-samsung-expert-x55-np350xaa-xf4br-titanium-D_NQ_NP_949559-MLB41587311663_042020-F.webp" width="150" height="100"/>
+                                </td>
+                                <td class="text-center">Notebook Samsung Expert X55 Np350xaa-xf4br - Titanium</td>
+                                <td class="text-center">3.800</td>
+                                <td class="text-center">10</td>
+                                <td class="text-center">1</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+
+
+                <div class="tab-pane fade" id="list-profile" role="tabpanel" aria-labelledby="list-graficos-list">
+                    <h3 class="w-100 display-4 text-center m-3">--- Gráficos ---</h3>
+
+                    <label for="produtoEscolhido">Produto:</label>
+                    <select id="produtoEscolhido" class="form-control w-100">
+                        <option value="1">Notebook Samsung Expert X55 Np350xaa-xf4br - Titanium</option>
+                    </select>
+
+                    <figure class="highcharts-figure mb-5 mt-3">
+                        <div id="high-google-container"></div>
+                    </figure>
+
+                    <figure class="highcharts-figure mb-5 mt-3">
+                        <div id="high-mercadolivre-container"></div>
+                    </figure>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/modules/export-data.js"></script>
+<script src="https://code.highcharts.com/modules/accessibility.js"></script>
+
+
+<script>
+
+    Highcharts.chart('high-google-container', {
+        chart: {
+            type: 'line'
+        },
+        title: {
+            text: 'Colocação No Google'
+        },
+        subtitle: {
+            text: 'Fonte: Google'
+        },
+        xAxis: {
+            categories: ['23/04/2020', '24/04/2020', '25/04/2020', '26/04/2020', '27/04/2020', '28/04/2020', '29/04/2020', '30/04/2020', '01/05/2020', '02/05/2020', '03/05/2020', '04/05/2020']
+        },
+        yAxis: {
+            title: {
+                text: 'Posição'
+            }
+        },
+        plotOptions: {
+            line: {
+                dataLabels: {
+                    enabled: true
+                },
+                enableMouseTracking: true
+            }
+        },
+        series: [
+            {
+                name: 'Notebook Samsung Expert X55 Np350xaa-xf4br - Titanium',
+                data: [47, 43, 42, 39, 40, 43, 35, 31, 28, 25, 20, 10]
+            }
+        ]
+    });
+
+
+    Highcharts.chart('high-mercadolivre-container', {
+        chart: {
+            type: 'line'
+        },
+        title: {
+            text: 'Colocação No Mercado Livre'
+        },
+        subtitle: {
+            text: 'Fonte: Mercado Livre'
+        },
+        xAxis: {
+            categories: ['23/04/2020', '24/04/2020', '25/04/2020', '26/04/2020', '27/04/2020', '28/04/2020', '29/04/2020', '30/04/2020', '01/05/2020', '02/05/2020', '03/05/2020', '04/05/2020']
+        },
+        yAxis: {
+            title: {
+                text: 'Posição'
+            }
+        },
+        plotOptions: {
+            line: {
+                dataLabels: {
+                    enabled: true
+                },
+                enableMouseTracking: true
+            }
+        },
+        series: [
+            {
+                name: 'Notebook Samsung Expert X55 Np350xaa-xf4br - Titanium',
+                data: [8, 9, 22, 12, 16, 20, 26, 23, 19, 15, 8, 1]
+            }
+        ]
+    });
+
+    function AdicionaBusca() {
+        var buscaProduto = document.getElementById('buscaProduto').value;
+        document.getElementById('tbodyBusca').innerHTML += "<td>" + buscaProduto + "</td>";
+    }
+
+</script>

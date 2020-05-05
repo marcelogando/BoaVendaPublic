@@ -1,0 +1,194 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewData["Title"] = "Pagina Inicial";
+}
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalScrollable" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title text-center text-danger w-100" id="exampleModalScrollableTitle">A Plataforma Boa Venda</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+            </div>
+            <div class="modal-footer">
+                <a href="https://www.boavenda.com/Home/Index#planosDiv" class="btn btn-success text-light" data-dismiss="modal">Inscrever-se</a>
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Fechar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="main" id="main">
+    <header class="bg-img header">
+        <div class="container">
+            <div class="row">
+                <div class="intro-box">
+                    <div class="intro">
+                        <img src="/img/logo.png" style="max-height:30%;max-width:70%;">
+                        <p>Gestão de Preços para o seu negócio</p>
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-danger p-3" data-toggle="modal" data-target="#exampleModalScrollable">
+                            Conheça nossa plataforma.
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section id="about" class="about section w-100 text-center" style="padding-top:40px; padding-bottom:40px;">
+        <div class="container">
+            <div class="row w-100">
+                <h2 class="title w-100">Quem somos</h2>
+                <div class="col-12 col-md-5">
+                    <p style="text-align: justify; text-indent: 2em;">
+                        Somos uma ferramenta de gestão de negócios gratuíta. Acompanhe um dashboard com atualização contínua de dados e tenha informações suficientes para criar estratégias e otimizar seus resultados. Aumente suas vendas com inteligência e análise da concorrência!
+                    </p>
+                    <p style="text-align: justify; text-indent: 2em;">
+                        Com a ferramenta é possível comparar preços, receber o histórico e alertas de alterações feitas pela concorrência, sugestão de valores e nomes mais competitivos, otimização de suas imagens e posicionamento na primeira página do Google.
+                    </p>
+                </div>
+                <div class="col-12 col-md-7 mt-4">
+                    <p style="text-align: left; text-indent: 2em;">
+                        - Quer alavancar as vitrines do seu negócio no mundo online?
+                    </p>
+                    <p style="text-align: left; text-indent: 2em;">
+                        - Quer que mais pessoas vejam seus anúncios
+                    </p>
+                    <p style="text-align: left; text-indent: 2em;">
+                        - Quer que mais pessoas comprem de você?
+                    </p>
+                    <p style="text-align: left; text-indent: 2em;">
+                        - Quer saber como estão seus produtos em relação aos do  da concorrente?
+                    </p>
+                    <p style="text-align: left; text-indent: 2em;">
+                        - Quer saber como precificar melhor seu produto e torná-lo mais atrativo?
+                    </p>
+                </div>
+                <div class="col-12 mt-2" style="background: #222222; border-radius: 20px;">
+                    <hr>
+                    <h2 style="text-align: center; color: #e02d45">
+                        AGORA VOCÊ PODE!
+                    </h2>
+                    <p class="text-light">
+                        Inscreva-se na nossa plataforma de forma gratuita e tenha acesso a nossa dashboard para responder todas as perguntas acima E MAIS!
+                    </p>
+
+                    <hr>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="purpose section">
+        <div class="container">
+            <h2 class="title">O que fazemos</h2>
+            <div class="row">
+                <div class="col-sm-3">
+                    <div class="vira-card">
+                        <div class="vira-card-header">
+                            <div class="card-icon">
+                                <span class="fa fa-search" aria-hidden="true"></span>
+                            </div>
+                        </div>
+                        <div class="vira-card-content">
+                            <h3>Comparador de Preços</h3>
+                            <p>
+                                Aumente suas vendas!
+                                Acompanhe os preços dos seus concorrentes e economize tempo e esforços.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="vira-card">
+                        <div class="vira-card-header">
+                            <div class="card-icon">
+                                <span class="fa fa-warning" aria-hidden="true"></span>
+                            </div>
+                        </div>
+                        <div class="vira-card-content">
+                            <h3>Alertas</h3>
+                            <p>
+                                Fique sempre um passo à frente
+                                Acompanhe o histórico de preços dos concorrentes e seja a primeira opção!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="vira-card">
+                        <div class="vira-card-header">
+                            <div class="card-icon">
+                                <span class="fa fa-camera" aria-hidden="true"></span>
+                            </div>
+                        </div>
+                        <div class="vira-card-content">
+                            <h3>Otimize suas imagens</h3>
+                            <p>
+                                Torne-se competitivo, utilize fotos melhores do que as de seus concorrentes
+                                Uma imagem vale mais que mil palavras, otimize suas fotos e tenha uma boa venda!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="vira-card">
+                        <div class="vira-card-header">
+                            <div class="card-icon">
+                                <span class="fa fa-google" aria-hidden="true"></span>
+                            </div>
+                        </div>
+                        <div class="vira-card-content">
+                            <h3>Apareça na primeira página do Google</h3>
+                            <p>
+                                Compare seus produtos com a concorrência e fique sempre na frente na busca do Google
+                                Aumente tráfego do seu site de forma eficaz!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="container-fluid" style="background: #222; min-height: 500px;" id="inscricaoDiv">
+        <div class="container" style="background: #222; min-height: 500px;">
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="text-center text-danger mt-5 pt-3 display-4">Inscrição</h2>
+                    <form asp-action="SetInscricao" asp-controller="Inscricao" method="post">
+                        <div class="form-group col-12 col-md-6 float-left">
+                            <input required autocomplete="off" type="email" name="Email" id="InscricaoEmail" class="form-control input-preto" placeholder="Seu Email Aqui..." />
+                        </div>
+                        <div class="form-group col-12 col-md-6 float-right">
+                            <input required autocomplete="off" type="text" name="Nome" id="InscricaoNome" class="form-control input-preto" placeholder="Seu Nome Aqui..." />
+                        </div>
+                        <div class="form-group col-12 col-md-6 float-left">
+                            <input required type="password" name="Senha" id="InscricaoSenha" class="form-control input-preto" placeholder="Sua Senha Aqui..." />
+                        </div>
+                        <div class="form-group col-12 col-md-6 float-right">
+                            <input required type="password" name="ConfirmSenha" id="InscricaoConfirmSenha" class="form-control input-preto" placeholder="Confirme Sua Senha..." />
+                        </div>
+                        <div class="form-group">
+                            <input required autocomplete="off" name="Telefone" id="InscricaoTelefone" class="telefone form-control input-preto" placeholder="Seu Telefone Aqui..." />
+                        </div>
+                        <div class="w-100">
+                            <button type="submit" id="btnInscricao" class="bg-danger w-100 p-2 text-center text-light btn">INSCREVER-SE</button>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</div>

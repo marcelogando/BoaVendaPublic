@@ -1,0 +1,49 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using BoaVenda.Areas.Identity.Data
+@inject SignInManager<BoaVendaUser> SignInManager
+@inject UserManager<BoaVendaUser> UserManager
+
+@if (SignInManager.IsSignedIn(User))
+{
+
+    <style>
+        #querSair:hover {
+            color: #333!important;
+        }
+    </style>
+    <form asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Page("/Index", new { area = "" })" method="post" id="logoutForm" class="navbar-right">
+        <ul class="nav navbar-nav navbar-right">
+            <a class="a-nav" href="@Url.Action("Index", "Dashboard")#contatoDiv">
+                <li class="nav-item">
+                    Contato
+                </li>
+            </a>
+            <li class="nav-item text-light" id="querSair">
+                Sair
+            </li>
+        </ul>
+        <button type="submit" id="btnSair" style="display:none;"></button>
+    </form>
+}
+else
+{
+    <ul class="nav navbar-nav navbar-right">
+        <a class="a-nav" href="@Url.Action("Index", "Home")#contatoDiv">
+            <li class="nav-item">
+                Contato
+            </li>
+        </a>
+
+        <a class="a-nav" href="@Url.Action("Index", "Home")#inscricaoDiv">
+            <li class="nav-item">
+                Inscreva-se
+            </li>
+        </a>
+        <a class="a-nav" asp-area="Identity" asp-page="/Account/Login">
+            <li class="nav-item">
+                Entre
+            </li>
+        </a>
+    </ul>
+
+}
