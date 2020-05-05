@@ -1,3 +1,1 @@
 # BoaVenda
-# BoaVendaPublic
-# BoaVendaPublic
